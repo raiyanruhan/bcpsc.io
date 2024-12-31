@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register Page</title>
+    <link rel="icon" href="logo.png" type="image/icon type">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Poppins light;
+            background-color: 05422a;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 6px 11px 11px rgba(0, 39, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 2px;
+            color: #005007da;
+        }
+
+        .container label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #555555;
+        }
+
+        .container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0d8052;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .container button:hover {
+            background-color: #00b351;
+        }
+
+        .container .link {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .container .link a {
+            color: #05422a;
+            text-decoration: none;
+        }
+
+        .container .link a:hover {
+            text-decoration: underline;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .link {
+            font-size: 13px;
+        }
+
+        .justFont {
+            font-family: poppins light;
+        }
+
+
+    </style>
+    <script>
+        function showLogin() {
+            document.getElementById('login-container').classList.remove('hidden');
+            document.getElementById('register-container').classList.add('hidden');
+        }
+
+        function showRegister() {
+            document.getElementById('register-container').classList.remove('hidden');
+            document.getElementById('login-container').classList.add('hidden');
+        }
+    </script>
+</head>
+
+<body>
+    <div id="login-container" class="container">
+        <h2>Sign in <i class="fas fa-login"></i></h2>
+        <form action="Welcome.html" method="GET">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        
+            <button type="submit">Sign in <i class="fas fa-universal-access"></i></button>
+        </form>
+        
+        <div class="link">
+            <p>Don't have an account? <a href="#" onclick="showRegister()">Register here</a></p>
+        </div>
+    </div>
+
+    <div id="register-container" class="container hidden">
+        <h4 class="registration">The website BCPSC.io is highly secured. You cannot easily create an account on this
+            website. Please talk with a BCPSC student who has an account on this site. The registration link will be
+            sent to you once he refers to your email.</p>
+            </form>
+            <div class="link">
+                <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+            </div>
+    </div>
+</body>
+
+</html>

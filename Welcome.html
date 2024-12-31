@@ -1,0 +1,158 @@
+<!-- Colors: #247BA0, #70C1B3, #B2DBBF, #F3FFBD, #91818A, #E3D7FF -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is the homepage of bcpsc.io">
+    <title>Home | bcpsc.io</title>
+    <script src="normalrecognition.js"></script>
+    <link rel="icon" href="logo.png" type="image/icon type">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            height: 100vh;
+            background-color: #F3FFBD;
+            color: #247BA0;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: #247BA0;
+            color: #F3FFBD;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            box-shadow: 3px 0 5px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+
+        .sidebar .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .sidebar .logo img {
+            max-width: 200px;
+            /* Adjusted for larger size */
+            height: auto;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #F3FFBD;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .sidebar ul li a i {
+            margin-right: 10px;
+        }
+
+        .sidebar ul li a:hover,
+        .sidebar ul li a.active {
+            background: #B2DBBF;
+            color: #247BA0;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #247BA0;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            color: #91818A;
+            text-align: center;
+            max-width: 600px;
+        }
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 20px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 2px grey;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: rgb(165, 172, 190);
+            border-radius: 20px;
+        }
+    </style>
+    <script>
+        // Highlight active navigation link
+        window.onload = function () {
+            const links = document.querySelectorAll('.sidebar ul li a');
+            const currentPath = window.location.pathname;
+
+            links.forEach(link => {
+                if (link.href.endsWith(currentPath)) {
+                    link.classList.add('active');
+                }
+            });
+        };
+    </script>
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="logo">
+            <a href="home.html"><img src="logo.svg" alt="Website Logo"></a>
+        </div>
+        <ul>
+            <li><a href="home.html"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="torrents.html"><i class="fas fa-cloud-download-alt"></i>Torrents</a></li>
+            <li><a href="forum.html"><i class="fas fa-comments"></i>Forum</a></li>
+            <li><a href="request.html"><i class="fas fa-envelope"></i>Request</a></li>
+            <li><a href="messages.html"><i class="fas fa-comment-dots"></i>Messages</a></li>
+            <li><a href="help.html"><i class="fas fa-life-ring"></i>Help</a></li>
+            <li><a href="teams.html"><i class="fas fa-users"></i>Teams</a></li>
+            <li><a href="donate.html"><i class="fas fa-donate"></i>Donate us</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i>About us</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h1>Welcome to BCPSC.io</h1>
+        <p>Your one-stop solution for connecting with fellow students, accessing educational resources, and sharing
+            knowledge in a secure and friendly environment.</p>
+    </div>
+</body>
+
+</html>
